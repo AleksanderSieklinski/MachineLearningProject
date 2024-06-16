@@ -23,10 +23,10 @@ def main():
     videoWriterFr = cv2.VideoWriter_fourcc(*"mp4v")
     videoWriter = cv2.VideoWriter("Car Racing run2 PPO.mp4", videoWriterFr, 30.0, (w, h))
     
-    
-    model.learn(total_timesteps = 4000 , log_interval = 5, progress_bar = True)
+    #Run for 2^19 = 524288 episodes
+    model.learn(total_timesteps = 524288 , log_interval = 5, progress_bar = True)
 
-    testRuns = 5
+    testRuns = 15
     for testRun in range(1, testRuns+1):
         numberOfNegativeSteps = 0
         observation = env.reset()
