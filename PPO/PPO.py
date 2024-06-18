@@ -21,10 +21,10 @@ def main():
     w, h = 400, 400
 
     videoWriterFr = cv2.VideoWriter_fourcc(*"mp4v")
-    videoWriter = cv2.VideoWriter("Car Racing run2 PPO.mp4", videoWriterFr, 30.0, (w, h))
+    videoWriter = cv2.VideoWriter("Car Racing run3 PPO.mp4", videoWriterFr, 30.0, (w, h))
     
-    #Run for 2^19 = 524288 episodes
-    model.learn(total_timesteps = 524288 , log_interval = 5, progress_bar = True)
+  
+    model.learn(total_timesteps = 1000000 , log_interval = 5, progress_bar = True)
 
     testRuns = 15
     for testRun in range(1, testRuns+1):
@@ -42,7 +42,10 @@ def main():
 
             if reward < 0:
                 numberOfNegativeSteps+=1
-            if numberOfNegativeSteps>300:
+            else:
+                numberOfNegativeSteps=0
+
+            if numberOfNegativeSteps>50:
                 break
 
             frame = env.render()
