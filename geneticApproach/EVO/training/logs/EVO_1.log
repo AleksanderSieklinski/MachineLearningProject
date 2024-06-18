@@ -1,0 +1,13 @@
+2024-06-16 21:29:20,201 - __main__ - INFO - Running test and recording
+2024-06-16 21:29:20,201 - __main__ - INFO - Starting the genetic algorithm
+2024-06-17 20:27:53,135 - __main__ - INFO - Recording the best individual
+2024-06-17 20:28:23,345 - __main__ - INFO - Episode 1, Score: -186.86043165467538
+2024-06-17 20:28:52,869 - __main__ - INFO - Episode 2, Score: -183.05263157894666
+2024-06-17 20:29:29,224 - __main__ - INFO - Episode 3, Score: -97.57804878048927
+2024-06-17 20:29:59,358 - __main__ - INFO - Episode 4, Score: -200.30294985250592
+2024-06-17 20:30:36,600 - __main__ - INFO - Episode 5, Score: -126.41643835616424
+2024-06-17 20:31:07,590 - __main__ - INFO - Episode 6, Score: -193.54052287581587
+2024-06-17 20:31:38,491 - __main__ - INFO - Episode 7, Score: -201.0755102040801
+2024-06-17 20:32:08,504 - __main__ - INFO - Episode 8, Score: -200.52046783625582
+2024-06-17 20:32:37,810 - __main__ - INFO - Episode 9, Score: -184.72222222222143
+2024-06-17 20:33:09,292 - __main__ - INFO - Episode 10, Score: -181.94732824427416

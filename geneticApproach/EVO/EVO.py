@@ -72,11 +72,11 @@ class EvoCarRacing:
 
     def __run(self):
         self.logger.info('Starting the genetic algorithm')
-        pop = self.toolbox.population(n=300)
+        pop = self.toolbox.population(n=20)
         # CXPB - The probability with which two individuals are crossed
         # MUTPB - The probability for mutating an individual
         # NGEN - The number of generations
-        CXPB, MUTPB, NGEN = 0.7, 0.3, 40
+        CXPB, MUTPB, NGEN = 0.7, 0.3, 150
         fitnesses = map(self.toolbox.evaluate, pop)
         for ind, fit in zip(pop, fitnesses):
             ind.fitness.values = fit
@@ -101,6 +101,7 @@ class EvoCarRacing:
             best_ind = tools.selBest(pop, 1)[0]
             print(f"Best individual: {best_ind}")
             print(f"Best fitness: {best_ind.fitness.values[0]}")
+            self.logger.info(f"Generation {g}, Best individual: {best_ind}, Best fitness: {best_ind.fitness.values[0]}")
         return pop
 
     def __record_best(self, pop):
