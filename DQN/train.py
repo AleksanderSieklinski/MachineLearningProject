@@ -13,11 +13,11 @@ env = gym.make('CarRacing-v2')
 dqn = DQN()
 frame_stack_size = 5
 frame_stack = deque(maxlen=frame_stack_size)
-num_of_episodes = 100
+num_of_episodes = 10001
 action_duration = 25
 epsilon = 1
 epsilon_min  = 0.01
-epsilon_decay = 0.99
+epsilon_decay = 0.9997
 max_steps = 50
 negative_reward_steps_threshold = 3
 batch_size = 128
@@ -29,16 +29,7 @@ for n in range(num_of_episodes):
     
     ## Wait for map to normalize
     for i in range(20):
-        action = dqn.action_space[3]
-        observation, reward, done, truncated, info = env.step(action)
-
-
-    for i in range(75):
         action = dqn.action_space[0]
-        observation, reward, done, truncated, info = env.step(action)
-
-    for i in range(20):
-        action = dqn.action_space[4]
         observation, reward, done, truncated, info = env.step(action)
 
         frame_stack.append(observation)

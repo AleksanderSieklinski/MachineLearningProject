@@ -54,7 +54,7 @@ class DQN():
 
     def __init__(self):
 
-        self.action_space = [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,0,1]]
+        self.action_space = [[0,0,0],[0.25,0,0],[-0.25,0,0],[0,0.1,0],[0,0,0.25]]
 
         self.agent = Qnet(len(self.action_space))
         self.target = Qnet(len(self.action_space))

@@ -7,9 +7,9 @@ import numpy as np
 
 action_space = [[0,0,0],[1,0,0],[-1,0,0],[0,1,0],[0,0,1]]
 frame_stack = deque(maxlen=5)
-action_duration = 10
+action_duration = 25
 env = gym.make('CarRacing-v2',render_mode='human')
-model = Qnet.load("model_1000.pth")
+model = Qnet.load("model_6000.pth")
 
 
 
@@ -17,14 +17,11 @@ env.reset()
 
 
 
-for i in range(50):
-    action = action_space[0]
-    observation, reward, done, truncated, info = env.step(action)
+for i in range(20):
+        action = [0,0,0]
+        observation, reward, done, truncated, info = env.step(action)
 
-for i in range(100):
-    action = action_space[0]
-    observation, reward, done, truncated, info = env.step(action)
-    frame_stack.append(observation)
+        frame_stack.append(observation)
 
 for j in range(50):
     with torch.no_grad():
